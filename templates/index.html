@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Forest Type Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  </style>
+</head>
+
+<body>
+  <!-- <Body background="../static/images/472fsdf.jpg"> <br>   -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center blue-text">Forest Fire Prevention</h1>
+      <div class="row center">
+        <h5 class="header col s12 blue-text">Predict the Forest Type<br>
+        </h5>
+      </div>
+    <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4 blu">
+          <label  style="color: #1409f4;" for="first_name"><b>b1</b></label>
+          <br>
+          <input style="color: #010101;" name="b1" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 blu">
+          <label  style="color: #1409f4;" for="first_name"><b>b2</b></label>
+          <br>
+          <input style="color: #010101;" name="b2" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 blu">
+          <label  style="color: #1409f4;" for="first_name"><b>b3</b></label>
+          <br>
+          <input style="color: #010101;" name="b3" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 blu">
+          <label style="color: #1409f4;" for="first_name"><b>b4</b></label>
+          <br>
+          <input style="color: #010101;" name="b4" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 blu">
+          <label style="color: #1409f4;" for="first_name"><b>b5</b></label>
+          <br>
+          <input style="color: #010101;" name="b5" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 blu">
+          <label style="color: #1409f4;" for="first_name"><b>b6</b></label>
+          <br>
+          <input style="color: #010101;" name="b6" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 blu">
+          <label style="color: #1409f4;" for="first_name"><b>b7</b></label>
+          <br>
+          <input style="color: #010101;" name="b7" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 blu">
+          <label style="color: #1409f4;" for="first_name"><b>b8</b></label>
+          <br>
+          <input style="color: #010101;" name="b8" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 blu">
+          <label style="color: #1409f4;" for="first_name"><b>b9</b></label>
+          <br>
+          <input style="color: #010101;" name="b9" id="last_name" type="text" class="validate" >
+        </div>
+        <div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b1</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b1"   type="text" class="validate">
+        </div>
+        <div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b2</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b2"   type="text" class="validate">
+        </div><div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b3</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b3"   type="text" class="validate">
+        </div><div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b4</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b4"   type="text" class="validate">
+        </div><div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b5</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b5"   type="text" class="validate">
+        </div><div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b6</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b6"   type="text" class="validate">
+        </div><div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b7</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b7"   type="text" class="validate">
+        </div><div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b8</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b8"   type="text" class="validate">
+        </div><div class="input-field col s4 bl">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_H_b9</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_H_b9"   type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b1</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b1"   type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b2</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b2"   type="text" class="validate">
+        </div><div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b3</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b3"   type="text" class="validate">
+        </div><div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b4</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b4"   type="text" class="validate">
+        </div><div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b5</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b5"   type="text" class="validate">
+        </div><div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b6</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b6"   type="text" class="validate">
+        </div><div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b7</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b7"   type="text" class="validate">
+        </div><div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b8</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b8"   type="text" class="validate">
+        </div><div class="input-field col s4">
+          <label style="color: #1409f4;" for="last_name"><b>pred_minus_obs_S_b9</b></label>
+          <br>
+          <input style="color: #010101;" id="last_name" name="pred_minus_obs_S_b9"   type="text" class="validate">
+        </div>
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light blue">Predict Forest Type</button>
+      </div>
+    </style="color: #1409f4;" form>
+      </div>
+    
+    <div style="color:#2128f3 ; font-size: x-large; background-color:cyan; padding: 20px;">
+      {{pred}}
+    </div>
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>
+
+  <footer class="page-footer blue">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Forest Type Prediction</h5>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="/">LinkedIn</a></li>
+            <li><a class="white-text" href="/">Github</a></li>
+            <li><a class="white-text" href="/">Twitter</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <p>By Sharif, Nagarjuna and amzad</p>
+      </div>
+    </div>
+  </footer>
+
+
+  
+
+  </body>
+</html> 
+
